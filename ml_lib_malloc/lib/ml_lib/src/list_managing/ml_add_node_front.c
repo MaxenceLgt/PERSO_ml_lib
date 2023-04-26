@@ -25,7 +25,7 @@ void ml_add_node_front(ml_list *list, void *data)
     ml_node *node = create_node_front(list, data);
 
     if (!list || !data || !node)
-        return (NULL);
+        return;
     if (list->size == 0) {
         list->head = node;
         list->tail = node;
