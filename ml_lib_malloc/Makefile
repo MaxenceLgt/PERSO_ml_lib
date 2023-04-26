@@ -7,11 +7,11 @@
 
 SRC	=
 
-MAIN = main.c
+MAIN =
 
 INCLUDE =	lib/ml_headers/
 
-NAME	= hello
+NAME	=
 
 CFLAGS = $(INCLUDE:%=-I%) -g
 
