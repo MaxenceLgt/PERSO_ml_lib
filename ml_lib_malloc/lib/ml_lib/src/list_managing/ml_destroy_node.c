@@ -10,6 +10,8 @@
 
 void ml_destroy_node(ml_list *list, ml_node *node, void (*f_ptr)(void *))
 {
+    if (!list)
+        return;
     if (node != NULL) {
         if (node->prev)
             node->prev->next = node->next;

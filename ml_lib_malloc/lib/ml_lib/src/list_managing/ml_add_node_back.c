@@ -12,7 +12,7 @@ static ml_node *create_node_back(ml_list *list, void *data)
 {
     ml_node *node = malloc(sizeof(ml_node));
 
-    if (!node)
+    if (!node || !list || !data)
         return (NULL);
     node->next = NULL;
     node->prev = list->tail;
@@ -24,7 +24,7 @@ void ml_add_node_back(ml_list *list, void *data)
 {
     ml_node *node = create_node_back(list, data);
 
-    if (!node)
+    if (!node || !list || !data)
         return;
     if (list->size == 0) {
         list->head = node;

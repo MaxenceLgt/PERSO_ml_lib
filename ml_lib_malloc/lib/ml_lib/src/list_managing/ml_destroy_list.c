@@ -23,8 +23,11 @@ static void destroy_lst_content(ml_node *lst_node, void (*f_ptr)(void *))
 
 void ml_destroy_list(ml_list *list, void (*f_ptr)(void *))
 {
-    ml_node *lst_node = list->tail;
+    ml_node *lst_node = NULL;
 
+    if (!list)
+        return;
+    lst_node = list->tail;
     if (lst_node)
         destroy_lst_content(lst_node, f_ptr);
     free(list);

@@ -8,6 +8,7 @@
 #ifndef ML_LIST_H_
     #define ML_LIST_H_
 
+    #define NULL ((void *)0)
     #include <sys/types.h>
 
     typedef struct ml_list_node {
