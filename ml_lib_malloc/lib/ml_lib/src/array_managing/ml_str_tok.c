@@ -12,6 +12,8 @@ static size_t count_words(char const *str, char const *token)
 {
     size_t nb_words = 0;
 
+    if (!str)
+        return (0);
     for (size_t i = 0; str[i] != '\0'; i++)
         if (!ml_char_is_in_lst(str[i], token) &&
         (str[i + 1] == '\0' || ml_char_is_in_lst(str[i + 1], token)))
@@ -22,6 +24,7 @@ static size_t count_words(char const *str, char const *token)
 static size_t get_size_word(char const *str, char const *token)
 {
     size_t count = 0;
+
     while (!ml_char_is_in_lst(str[count], token) &&
     str[count] != '\0')
         count++;

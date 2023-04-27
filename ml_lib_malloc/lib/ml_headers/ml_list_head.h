@@ -8,8 +8,17 @@
 #ifndef ML_LIST_HEAD_
     #define ML_LIST_HEAD_
 
-    #include "ml_list_h.h"
+    typedef struct ml_list_node {
+        void *data;
+        struct ml_list_node *next;
+        struct ml_list_node *prev;
+    } ml_node;
 
+    typedef struct ml_list_list {
+        size_t size;
+        ml_node *head;
+        ml_node *tail;
+    } ml_list;
 
     /**
      * @brief ml_create_list function create a new linked list 'ml_list *'

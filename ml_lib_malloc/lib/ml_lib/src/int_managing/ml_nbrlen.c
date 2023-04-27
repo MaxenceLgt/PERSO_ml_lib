@@ -13,7 +13,7 @@ size_t ml_nbrlen(int nbr)
 
     if (nbr < 0)
         return (ml_nbrlen(-nbr) + 1);
-    if (nbr == 0)
+    if (nbr == 0 || nbr == -0)
         return (1);
     while (nbr != 0){
         count++;
